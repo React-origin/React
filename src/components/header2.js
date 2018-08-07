@@ -1,12 +1,17 @@
 import React from 'react'
-
+import '../stylesheets/prodetail.css'
 class Header2 extends React.Component{
 	constructor(props){
 		super(props);
 	}
 	render(){
 		return(
-			<div>Header2</div>
+		<div>
+			<div className="p_top">
+			11
+			</div>
+		</div>
+			
 		)
 	}
 }
