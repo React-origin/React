@@ -10,7 +10,7 @@ class Proyd extends React.Component{
 		return(
 			<div id='proyd'>
 				<Header2/>
-				<div>Proyd</div>
+				<div>Proyd页面</div>
 				<Footer/>
 			</div>
 		)
