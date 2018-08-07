@@ -1,0 +1,30 @@
+#header{
+	height:90px;
+	background:#fff;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+	box-sizing: border-box;
+	font-size: 14px;
+}
+#header>div{
+	width:1200px;
+	height:90px;
+	margin:0 auto;
+}
+#header>div>div{
+	float: left;
+}
+.link_btn>ul>li{
+	float: left;
+}
+.logo a{
+	display: block;
+	width:159px;
+	height:48px;
+	margin-top:20px;
+	background:url(../img/sfy_logo.png) no-repeat center/cover;
+}
+.sousuo{
+	width:360px;
+	height:59px;
+	margin:18px 0 0 197px;
+}
