@@ -1,0 +1,80 @@
+#login{
+    height: 100vh;
+    width: 100%;
+    background: url(../img/background1.jpg) no-repeat center;
+    background-size: cover;   
+}
+.login_logo{
+    width: 100%;
+    padding: 10px 0;
+    background: rgba(255,255,255,0.4);
+
+}
+.login_logo img{
+    margin-left: 30px;
+}
+.login_box{
+    width:400px;
+    height:400px;
+    position: absolute;
+    right:60px;
+    top: 50%;
+    bottom:50%;
+    margin: auto;
+    padding: 50px 0;
+    background: rgba(255,255,255,0.7);
+    border-radius: 4px;
+}
+.login_box input{
+    display: block;
+    width: 80%;
+    height: 44px;
+    line-height: 44px;
+    outline: none;
+    border-radius: 5px;
+    margin:20px auto;
+    border: 1px solid #ddd;
+}
+.login_box button{
+    display: block;
+    width: 80%;
+    height:44px;
+    line-height:44px;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+}
+.register{
+    border-radius: 5px;
+    background: rgb(109, 159, 233);
+    color: #fff;  
+    margin-top: 30px!important;
+    font-size: 18px;
+}
+.login_btn{
+    background: none;
+    color: rgb(192, 94, 102);
+}
+.login_login{
+    display: none;
+}
+.login_register div{
+    background: #fff;
+    width: 80%;
+    height: 46px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.login_register div>input{
+    float: left;
+    width: 70%;
+    border: 0;
+    margin: 0;
+}
+.login_register div>i{
+    float: left;
+    line-height: 46px;
+    font-style: normal;
+    color: rgb(105, 152, 212);
+}
