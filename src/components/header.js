@@ -18,7 +18,7 @@ class Header extends React.Component{
 							<button type='button'>搜索</button>
 						</div>
 						<div>
-							<span>热门搜索:</span>
+							<span>热门搜索 : </span>
 							<span>巴厘岛</span>
 							<span>曼谷</span>
 							<span>济州岛</span>
@@ -29,6 +29,7 @@ class Header extends React.Component{
 					</div>
 					<div className='link_btn'>
 						<ul>
+							<li><Link to='/login'>登录</Link> <Link to='/register'>注册</Link></li>
 							<li>如何使用首付游</li>
 							<li>
 								帮助中心
