@@ -9,9 +9,11 @@ class Prodetail extends React.Component{
 	render(){
 		return(
 			<div id='prodetail'>
-				<Header2/>
-				<div>Prodetail</div>
-				<Footer/>
+				<div className="p_top">1</div>
+				<div className="p_main">2</div>
+				<div className="p_bottom">3</div>
+
+
 			</div>
 		)
 	}

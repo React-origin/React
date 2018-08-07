@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#main{
+    min-height: 600px;
+    overflow: hidden;
+    background: #f0f0f0;
+    padding: 32px 20px 0 20px;
+    box-sizing: border-box;
+}
+.con{
+    min-height: 200px;
+    box-sizing: border-box;
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content:space-between;
+}
+.con dl{
+    float: left;
+    width: 590px;
+    /* margin-bottom: 18px;
+    margin-right: 20px; */
+    height: 150px;
+    background:white;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 15px;
+}
+dl img{
+    width: 203px;
+    height: 150px;
+    float: left;
+}
+dl dd{
+    float: left;
+    padding: 15px 13px 10px 10px;
+    box-sizing: border-box;
+}
+dd .tit{
+     /* text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:wrap; */
+    width: 360px;
+    height: 35px;
+    float: left;
+    font-size: 12px;
+    height: 16px;
+    text-align: left;
+    font-weight: 900;
+    line-height: 18px;
+    margin-bottom: 15px;
+}
+.infor{
+    line-height: 33px;
+    font-size: 12px;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: left;
+    color: #909090;
+}
+.data{
+    text-align: left;
+    font-size: 12px;
+    line-height: 35px;
+}
+.tag span{
+   float: left;
+    font-size: 12px;
+    line-height:20px; 
+}
+.sfy{
+    float: right!important;
+    font-size: 15px;
+}
+.price{
+    float: right!important;
+    font-size:20px!important;
+    color: red;
+}
