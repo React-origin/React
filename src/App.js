@@ -16,8 +16,8 @@ class App extends Component {
 							<Route path='/index' component={Index}></Route>
 							<Route path='/login' component={Login}></Route>
 							<Route path='/register' component={Register}></Route>
-							<Route path='/prolist' component={Prolist}></Route>
-							<Route path='/prodetail' component={Prodetail}></Route>
+							<Route path='/prolist/:list' component={Prolist}></Route>
+							<Route path='/prodetail/:id' component={Prodetail}></Route>
 							<Route path='/orders' component={Orders}></Route>
 							<Route path='/proyd' component={Proyd}></Route>
 							<Redirect to='/index'/>
