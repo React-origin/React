@@ -11,7 +11,7 @@ import Lunbo4 from "../img/lunbo4.jpg"
 import Lunbo5 from "../img/lunbo5.jpg"
 import Lunbo6 from "../img/lunbo6.jpg"
 import Lunbo7 from "../img/lunbo7.jpg"
-import Data from "../data/data4"
+import Data from "../data/data3"
 import Mock from "mockjs"
 const ButtonGroup = Button.Group;
 function onPanelChange(value, mode){
@@ -19,17 +19,17 @@ function onPanelChange(value, mode){
   }
   var index=0;
   
-  Mock.mock("http://www.baidu.com","post",(req) => {
-	  var id=eval(req.body)
-	  var arr=[]
-	  Data.list.map(function(item){
-		  if(item.goodsID==id){
-			  arr.push(item)
-		  }
+//   Mock.mock("http://www.baidu.com","post",(req) => {
+// 	  var id=eval(req.body)
+// 	  var arr=[]
+// 	  Data.list.map(function(item){
+// 		  if(item.goodsID==id){
+// 			  arr.push(item)
+// 		  }
 		 
-	  })
-	  return arr;
-  })
+// 	  })
+// 	  return arr;
+//   })
 class Prodetail extends React.Component{
 	constructor(props){
 		super(props)
@@ -72,7 +72,7 @@ class Prodetail extends React.Component{
 		var _this=this
 		$.ajax({
 			type: "post",
-			url: "http://www.baidu.com",
+			url: "http://www.baidu.com/api",
 			async:true,
 			data:{id:_this.props.match.params.id},
 			dataType: "json",

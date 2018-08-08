@@ -29,4 +29,15 @@ var  Data = Mock.mock({
               
     ]
 })
+Mock.mock("http://www.baidu.com/api","post",(req) => {
+    var id=eval(req.body)
+    var arr=[]
+    Data.list.map(function(item){
+        if(item.goodsID==id){
+            arr.push(item)
+        }
+       
+    })
+    return arr;
+})
 export default Data;

@@ -38,6 +38,7 @@ class Prolist extends React.Component{
 	render(){
 	return(
 		<div>
+				<header></header>
 				<div id="main">
                     <div className="con">
 					{/* 遍历dl的开始 */}
