@@ -3,7 +3,6 @@ import '../stylesheets/prodetail.css'
 import Footer from '../components/footer'
 import Header2 from '../components/header2'
 import $ from "jquery"
-import 'antd/dist/antd.css'
 import { Button,Icon,Calendar,Carousel } from 'antd';
 import Lunbo1 from "../img/lunbo1.jpg"
 import Lunbo2 from "../img/lunbo2.jpg"
@@ -12,18 +11,18 @@ import Lunbo4 from "../img/lunbo4.jpg"
 import Lunbo5 from "../img/lunbo5.jpg"
 import Lunbo6 from "../img/lunbo6.jpg"
 import Lunbo7 from "../img/lunbo7.jpg"
-const ButtonGroup = Button.Group;
-function onPanelChange(value, mode) {
-	console.log(value);
-	this.state={
-		str:""
-	}
-  }
+// const ButtonGroup = Button.Group;
+// function onPanelChange(value, mode){
+// 	console.log(value);	
+//   }
   var index=0;
   
 class Prodetail extends React.Component{
 	constructor(props){
-		super(props);
+		super(props)
+		this.state={
+			str:""
+		}
 	}
 	tap(){
 		index++;
@@ -32,7 +31,7 @@ class Prodetail extends React.Component{
 		}else{
 			$(".rili").show()
 		}
-		// this.getState=
+	
 	}
 	plus(){	
 		this.refs.ipt.value++
@@ -64,12 +63,12 @@ class Prodetail extends React.Component{
 					<div className="p_con">
 						<div className="lunbo">
 										
-							<Carousel autoplay>				
+							{/* <Carousel autoplay>				
 								<div><h3><img src={Lunbo1}/></h3></div>
 								<div><h3><img src={Lunbo2}/></h3></div>
 								<div><h3><img src={Lunbo3}/></h3></div>
 								<div><h3><img src={Lunbo4}/></h3></div>
-							</Carousel> 
+							</Carousel>   */}
 							
 						</div>
 						<div className="p_detail">
@@ -96,21 +95,21 @@ class Prodetail extends React.Component{
 								<span>出发日期</span>
 								<strong onClick={this.tap.bind(this)}>请选择出发日期</strong>
 
-								<div className="rili" style={{ width:430, border: '1px solid #d9d9d9', borderRadius: 4,"z-index":999999}}>
+								{/* <div className="rili" style={{ width:430, border: '1px solid #d9d9d9', borderRadius: 4}}>
     <Calendar fullscreen={false} onPanelChange={onPanelChange} />
-                               </div>
+                               </div> */}
 									
 								
 							</div>
 							<div className="p_member">
 								<span>出行人数</span>
-								<ButtonGroup>
+								{/* <ButtonGroup>
 									<Button className="p_btn p_plus" onClick={this.plus.bind(this)}>+</Button>
 									<input className="p_btn p_num" placeholder="1" ref="ipt"/>
 									<Button  className="p_btn p_jian" onClick={this.jian.bind(this)}>-</Button>
-								</ButtonGroup>
+								</ButtonGroup> */}
 							</div>
-							<Button type="primary" block className="p_yuding" onClick={this.tiaozhuan.bind(this)}>立即预定</Button>
+							{/* <Button type="primary" block className="p_yuding" onClick={this.tiaozhuan.bind(this)}>立即预定</Button> */}
 
 											
 						
@@ -133,12 +132,12 @@ class Prodetail extends React.Component{
 							</p>
 							<span className="my-area-spot"></span>
 							    <span className="lib-ft24 lib-pl20">酒店详情</span>
-							<p className="my-area-content">
-							   <p class="lib-skin-second lib-ft20 lib-pb21 lib-mt30">三亚辰光克拉码头酒店    Lacosta Hotel（含早/双人房）</p>
+							<div className="my-area-content">
+							   <p className="lib-skin-second lib-ft20 lib-pb21 lib-mt30">三亚辰光克拉码头酒店    Lacosta Hotel（含早/双人房）</p>
 							    <img src={Lunbo5}/>
 								<img src={Lunbo6}/>
 								<img src={Lunbo7}/>
-							</p>
+							</div>
 								
 
 
@@ -159,18 +158,18 @@ class Prodetail extends React.Component{
 								
 							</div>				
 							<div>
-								<span class="my-area-spot"></span>
+								<span className="my-area-spot"></span>
 								<span className="lib-ft24 lib-pl20">常见问题</span>
-								<p class="my-area-content">
+								<p className="my-area-content">
 								首付游是京东金融旅游产品战略合作品牌，为购买合作旅游商家商品的用户提供首付＋月付服务。
 								</p>
-								<span class="my-area-spot"></span>
-								<span class="lib-ft24 lib-pl20">购买享受首付游服务的旅游商品会占用白条额度吗？</span>
+								<span className="my-area-spot"></span>
+								<span className="lib-ft24 lib-pl20">购买享受首付游服务的旅游商品会占用白条额度吗？</span>
 						
-								<p class="my-area-content">不会占用京东白条额度哦。</p>
-								<span class="my-area-spot"></span>
+								<p className="my-area-content">不会占用京东白条额度哦。</p>
+								<span className="my-area-spot"></span>
 								<span className="lib-ft24 lib-pl20">如何使用首付游？</span>
-								<p class="my-area-content">
+								<p className="my-area-content">
 								1.点击购买商品。<br/> 
 								2.等待首付游发送订单确认短信。<br/>
 								3.订单确认后，登录首付游，在“个人中心”里“我的订单”页面查看确认订单详情。<br/>
