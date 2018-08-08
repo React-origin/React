@@ -11,17 +11,30 @@ import Lunbo4 from "../img/lunbo4.jpg"
 import Lunbo5 from "../img/lunbo5.jpg"
 import Lunbo6 from "../img/lunbo6.jpg"
 import Lunbo7 from "../img/lunbo7.jpg"
-// const ButtonGroup = Button.Group;
-// function onPanelChange(value, mode){
-// 	console.log(value);	
-//   }
+import Data from "../data/data4"
+import Mock from "mockjs"
+const ButtonGroup = Button.Group;
+function onPanelChange(value, mode){
+	console.log(value);	
+  }
   var index=0;
   
+  Mock.mock("http://www.baidu.com","post",(req) => {
+	  var id=eval(req.body)
+	  var arr=[]
+	  Data.list.map(function(item){
+		  if(item.goodsID==id){
+			  arr.push(item)
+		  }
+		 
+	  })
+	  return arr;
+  })
 class Prodetail extends React.Component{
 	constructor(props){
 		super(props)
 		this.state={
-			str:""
+			arr:[]
 		}
 	}
 	tap(){
@@ -55,66 +68,97 @@ class Prodetail extends React.Component{
 			$(".p_box>div").eq(index).addClass("active").siblings().removeClass("active")
 
 		})
+
+		var _this=this
+		$.ajax({
+			type: "post",
+			url: "http://www.baidu.com",
+			async:true,
+			data:{id:_this.props.match.params.id},
+			dataType: "json",
+			success: function (data) {
+				console.log(data[0].goodsID)
+			   _this.setState({arr:data})
+				var arr1=data
+				console.log(arr1[0])
+			}
+		});
+
 	}
 	render(){
+		var _this = this
 		return(
-			<div id='prodetail'>
+			<div id='prodetail'>			
 				<div className="p_main">
-					<div className="p_con">
-						<div className="lunbo">
-										
-							{/* <Carousel autoplay>				
-								<div><h3><img src={Lunbo1}/></h3></div>
-								<div><h3><img src={Lunbo2}/></h3></div>
-								<div><h3><img src={Lunbo3}/></h3></div>
-								<div><h3><img src={Lunbo4}/></h3></div>
-							</Carousel>   */}
+				{/* 遍历开始 */}
+
+				
+				{
+					this.state.arr.map(function(item,i){
+						
+						return(
+							
+					 <div className="p_con" key={i}>
+					 <div className="lunbo">
+									
+						<Carousel autoplay>				
+							<div><h3><img src={Lunbo1}/></h3></div>
+							<div><h3><img src={Lunbo2}/></h3></div>
+							<div><h3><img src={Lunbo3}/></h3></div>
+							<div><h3><img src={Lunbo4}/></h3></div>
+						</Carousel>  
+							 
+					</div>
+					<div className="p_detail">
+						<p className="p_tit">{item.name}</p>
+						
+						<div className="flex1">
+							<span className="lib-spot"></span>
+							<span className="wenzi">特卖不退不换</span>
+							<span className="lib-spot"></span>
+							<span className="wenzi">提前4天预订</span>
+							<span className="lib-spot"></span>
+							<span className="wenzi">至多10人/单</span>
+							<span className="lib-spot"></span>
+							<span className="wenzi">App专享：3期0利率，首单最高立减100元</span>
+							
+						</div>	
+
+						<div  className="jiage">
+							<span className="price-l">单&nbsp;&nbsp;&nbsp;价:</span>
+							<span className="price-l">首付游</span>
+							<span className="price-l">￥183</span>
+						</div>	
+						<div className="riqi">
+							<span>出发日期</span>
+							<strong onClick={_this.tap.bind(_this)}>请选择出发日期</strong>
+<div className="rili" style={{ width:430, border: '1px solid #d9d9d9', borderRadius: 4}}>
+<Calendar fullscreen={false} onPanelChange={onPanelChange} />
+						   </div> 
+								
 							
 						</div>
-						<div className="p_detail">
-							<p className="p_tit">北京往返三亚5天4晚自由行|三亚湾康年度假酒店 尊贵海景房含双早 增接送机和BBQ自助餐
-							</p>
-							<div className="flex1">
-								<span className="lib-spot"></span>
-								<span className="wenzi">特卖不退不换</span>
-								<span className="lib-spot"></span>
-								<span className="wenzi">提前4天预订</span>
-								<span className="lib-spot"></span>
-								<span className="wenzi">至多10人/单</span>
-								<span className="lib-spot"></span>
-								<span className="wenzi">App专享：3期0利率，首单最高立减100元</span>
-								
-							</div>	
-
-							<div  className="jiage">
-								<span className="price-l">单&nbsp;&nbsp;&nbsp;价:</span>
-								<span className="price-l">首付游</span>
-								<span className="price-l">￥183</span>
-							</div>	
-							<div className="riqi">
-								<span>出发日期</span>
-								<strong onClick={this.tap.bind(this)}>请选择出发日期</strong>
-
-								{/* <div className="rili" style={{ width:430, border: '1px solid #d9d9d9', borderRadius: 4}}>
-    <Calendar fullscreen={false} onPanelChange={onPanelChange} />
-                               </div> */}
-									
-								
-							</div>
-							<div className="p_member">
-								<span>出行人数</span>
-								{/* <ButtonGroup>
-									<Button className="p_btn p_plus" onClick={this.plus.bind(this)}>+</Button>
-									<input className="p_btn p_num" placeholder="1" ref="ipt"/>
-									<Button  className="p_btn p_jian" onClick={this.jian.bind(this)}>-</Button>
-								</ButtonGroup> */}
-							</div>
-							{/* <Button type="primary" block className="p_yuding" onClick={this.tiaozhuan.bind(this)}>立即预定</Button> */}
-
-											
-						
+						<div className="p_member">
+							<span>出行人数</span>
+							 <ButtonGroup>
+								<Button className="p_btn p_plus" onClick={_this.plus.bind(_this)}>+</Button>
+								<input className="p_btn p_num" placeholder="1" ref="ipt"/>
+								<Button  className="p_btn p_jian" onClick={_this.jian.bind(_this)}>-</Button>
+							</ButtonGroup> 
 						</div>
+						 <Button type="primary" block className="p_yuding" onClick={_this.tiaozhuan.bind(_this)}>立即预定</Button> 
+														
 					</div>
+				</div>
+			
+
+						)
+					})
+				}
+
+
+
+					{/* 遍历结束 */}
 					<div className="p_nav">
 						<ul id="p_list">
 							<li className="hover">产品详情</li>			

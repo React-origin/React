@@ -120,7 +120,7 @@
 }
 .p_list{
     width: 100%;
-    background: #f3f3f3;
+    background:#c9c8c8;
 }
  .p_num{
      outline: none;
@@ -128,7 +128,7 @@
  .p_nav{
      height: auto;
      overflow: hidden;
-     border: 1px solid #364d79;
+     border: 1px solid #c9c8c8;
  }
  #p_list{ 
     height: 50px;
