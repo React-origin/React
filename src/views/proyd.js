@@ -16,7 +16,8 @@ class Proyd extends React.Component{
 	constructor(props){
 		super(props);
 		this.state={
-			people:"1"
+			people:"1",
+			allnum:245
 		}
 	}
 	//点击勾选
@@ -40,22 +41,30 @@ class Proyd extends React.Component{
 		
 	}
 	
+	//点击加减
 	jian(){
 		this.refs.ipt.value--		
 		if (this.refs.ipt.value<=1) {
 			this.refs.ipt.value=1
 		}
 		this.setState({
-			people:this.refs.ipt.value
+			people:this.refs.ipt.value,
+			allnum:245*parseInt(this.refs.ipt.value)
 		})   
 	}
 	jia(){
 		this.refs.ipt.value++
 		this.setState({
-			people:this.refs.ipt.value
+			people:this.refs.ipt.value,
+			allnum:245*parseInt(this.refs.ipt.value)
 		})   
+		
 	}
 	
+	//点击提交
+	tijiao(){
+		this.props.history.push("/orders")
+	}
 	componentDidMount(){
 		
 	}
@@ -68,11 +77,11 @@ class Proyd extends React.Component{
 					{/*右边*/}
 					<div className="w_right">
 							<h3>费用信息</h3>
-							<div>人数<span>1</span></div>
-							<div>首付<b>¥245</b></div>
+							<div>人数<span>{this.state.people}</span></div>
+							<div>首付<b>¥{this.state.allnum}</b></div>
 							<div>
 							月付
-							<span>¥245</span>
+							<span>¥{this.state.allnum}</span>
 							x11个月
 							</div>
 					</div>
@@ -94,12 +103,12 @@ class Proyd extends React.Component{
 										<span className='w_shijian'>2018-8-8</span>
 									<img src={w_date} className="proyd_date" onClick={this.tap2.bind(this)} />								
 									</span>
-									{/*<div style={{ width: 300, border: '1px solid #d9d9d9', borderRadius: 4,background:"#fff",position:"absolute",left:"200px",display:"none"}} className="w_rili">
+									<div style={{ width: 300, border: '1px solid #d9d9d9', borderRadius: 4,background:"#fff",position:"absolute",left:"200px",display:"none"}} className="w_rili">
 									    <Calendar fullscreen={false} 
 									    onPanelChange={onPanelChange} 
 									    
 									    />
-									  </div>*/}
+									  </div>
 							</div>
 							<div className="xl_con">
 									<span>出行人数</span>
@@ -139,7 +148,7 @@ class Proyd extends React.Component{
 							<h3>出行人信息<span>（出行人1必须是联系人)</span></h3>
 													
 							<div className="cx_con">
-									<p>出行人<span>{this.state.people}</span></p>
+									<p>出行人<span>1</span></p>
 									<div>
 										<span>中文名称</span>
 										<input type="text" className="chu_name"/>									
@@ -175,7 +184,7 @@ class Proyd extends React.Component{
 							<p>3.用户在首付游产生的任何交易行为都会记入互联网征信体系。</p>
 				</div>
 				
-				<button className="w_sure">提交订单</button>
+				<button className="w_sure" onClick={this.tijiao.bind(this)}>提交订单</button>
 					
 					
 				

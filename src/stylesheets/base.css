@@ -1,0 +1,43 @@
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+img,fieldset{border:0; }
+img{display:block;}
+a{text-decoration:none; color:#333;}
+h1,h2,h3,h4,h5,h6{font-weight:100;}
+body{ font-family:"微软雅黑";}
+input,a{outline:none;}
+
+/*header2的修饰*/
+.w_header2{
+	width: 1240px;
+	height:48px;
+	background: #f48582;
+	line-height: 48px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+} 
+.w_header2 .w_header2_logo{
+	width: 93px;
+	height: 27px;
+	margin-left: 22px;
+	margin-top: 11px;
+}
+.w_header2 span,.w_header2 .w_header2_dianji{
+	float: right;
+}
+
+.w_header2 span{
+	color: #fff;
+	font-size: 18px;
+	margin-right: 75px;
+}
+
+.w_header2_dianji{
+	position: absolute;
+	top: 11px;
+	right: 20px;
+}
+.header2_wrap{
+	background: #f48582;
+}

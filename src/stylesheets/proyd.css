@@ -8,9 +8,9 @@ body{ font-family:"微软雅黑";}
 input,a{outline:none;}
 
 #w_main{
-	width: 1200px;
+	width: 1240px;
 	box-sizing: border-box;
-	margin: 0 auto;
+	margin: 10px auto;
 	min-height:300px ;
 	overflow: hidden;
 }
@@ -214,3 +214,7 @@ h3 span{
 	font-size: 26px;
 	color: #f48582;
 }
+.w_rili{
+	z-index: 999;
+}
+
