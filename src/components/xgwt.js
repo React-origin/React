@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/base.css'
+import '../stylesheets/base.css'
 
 class Xgwt extends React.Component{
 	constructor(props){

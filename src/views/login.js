@@ -27,12 +27,18 @@ class Login extends React.Component{
     }
 
     tap(){
-       if(this.refs.ipt.value == ''){
+        var res = /^[1]\d{10}$/;
+        var rew = /^[a-zA-Z_]\w{5,13}$/;
+       if(this.refs.ipt.value == ""){
            alert('请输入用户名')
        }else if(this.refs.ipt1.value == ''){
            alert('请输入验证码')
        }else if(this.refs.ipt2.value == ''){
            alert('密码不能为空')
+       }else if(res.test(this.refs.ipt.value) == false){
+           alert('请输入正确的手机号格式')
+       }else if(rew.test(this.refs.ipt2.value) == false){
+           alert('请按照要求填写密码')
        }else{
            var _this = this 
            $.ajax({
@@ -89,10 +95,10 @@ class Login extends React.Component{
                 success:function(data){
                      if(data == 2){
                         alert('登录成功')
-                        _this.props.history.push('/home')
+                        sessionStorage.setItem('name',_this.refs.ipt3.value)
+                        _this.props.history.push('/index')
                     }else{
                         alert('用户名或密码错误')
-                        // location.href='#/login'
                     }
                 }
             })
@@ -108,7 +114,7 @@ class Login extends React.Component{
 	render(){
 		return(
 			<div id='login'>
-				<div className="login_logo"><Link to="/home"><img src={login_pic}/></Link></div>              
+				<div className="login_logo"><Link to="/index"><img src={login_pic}/></Link></div>              
                 <div className="login_box">
                     <div className="login_register">
                         <input type="text" ref="ipt" placeholder="请输入手机号"/>
@@ -116,7 +122,7 @@ class Login extends React.Component{
                             <input type="text" className="yzm" ref="ipt1" placeholder="请输入验证码"/>
                             <i onClick={this.yzm.bind(this)}>获取验证码</i>
                         </div>
-                        <input type="text" ref="ipt2" placeholder="请输入密码"/>
+                        <input type="text" ref="ipt2" placeholder="登录密码为8-18位数字与字母组合"/>
                         <button onClick={this.tap.bind(this)} className="register">注册</button>
                         <button onClick={this.log.bind(this)} className="login_btn">已有用户直接登录</button>
                     </div>
