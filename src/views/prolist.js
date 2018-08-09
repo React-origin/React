@@ -6,10 +6,9 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import Xgwt from '../components/xgwt'
 import Mock from "mockjs"
-import Data from "../data/data3"
+import mok from "../data/data2"
 
-Mock.mock("http://www.baidu.com/api.php",Data)
-//data是data3里的
+Mock.mock("http://www.taobao.com/api.php",mok)
 class Prolist extends React.Component{
 	constructor(props){
 		super(props)
@@ -22,14 +21,14 @@ class Prolist extends React.Component{
 	componentDidMount(){
 		var _this=this;
 		$.ajax({
-			type: "get",
-			url: "http://www.baidu.com/api.php",
-			// data:----> classid,
+			type: "post",
+			url: "http://www.taobao.com/api.php",
+			data:{classid:_this.props.match.params.list},
 			async:true,
 			dataType: "json",
 			success: function (data) {
-				console.log(data.list)
-				_this.setState({arr:data.list})
+				// console.log(data)
+				_this.setState({arr:data})
 			}
 		});
 		
@@ -50,17 +49,17 @@ class Prolist extends React.Component{
 							// }
 							return(
 								<dl key={i}>
-							     <Link to={'/prodetail/'+item.goodsID} style={{color:"black"}}> 
-									<dt><img src={item.cover_image}/></dt>
+							     <Link to={'/prodetail/'+item.goodsid} style={{color:"black"}}> 
+									<dt><img src={item.img}/></dt>
 									<dd>  
 									
-										<div className="tit">{item.name}</div>
+										<div className="tit">{item.title}</div>
 										<div className="infor">{item.recommended_reason}</div>
-										<div className="data">出发时间<span>{item.month_string}</span></div>
+										<div className="data">出发时间<span>{item.num}</span></div>
 										<div className="tag">
 											<span>合作平牌</span>
 											<span>首付游:</span>
-											<span className="sfy">首付游<span className="price">{item.price}</span></span>                                   
+											<span className="sfy">首付游<span className="price">{item.money}</span></span>                                   
 										</div>
 									</dd>
 							    </Link> 

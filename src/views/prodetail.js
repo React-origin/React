@@ -4,14 +4,10 @@ import Footer from '../components/footer'
 import Header2 from '../components/header2'
 import $ from "jquery"
 import { Button,Icon,Calendar,Carousel } from 'antd';
-import Lunbo1 from "../img/lunbo1.jpg"
-import Lunbo2 from "../img/lunbo2.jpg"
-import Lunbo3 from "../img/lunbo3.jpg"
-import Lunbo4 from "../img/lunbo4.jpg"
 import Lunbo5 from "../img/lunbo5.jpg"
 import Lunbo6 from "../img/lunbo6.jpg"
 import Lunbo7 from "../img/lunbo7.jpg"
-import Data from "../data/data3"
+import Mock1 from "../data/data3"
 import Mock from "mockjs"
 const ButtonGroup = Button.Group;
 function onPanelChange(value, mode){
@@ -19,17 +15,6 @@ function onPanelChange(value, mode){
   }
   var index=0;
   
-//   Mock.mock("http://www.baidu.com","post",(req) => {
-// 	  var id=eval(req.body)
-// 	  var arr=[]
-// 	  Data.list.map(function(item){
-// 		  if(item.goodsID==id){
-// 			  arr.push(item)
-// 		  }
-		 
-// 	  })
-// 	  return arr;
-//   })
 class Prodetail extends React.Component{
 	constructor(props){
 		super(props)
@@ -74,13 +59,13 @@ class Prodetail extends React.Component{
 			type: "post",
 			url: "http://www.baidu.com/api",
 			async:true,
-			data:{id:_this.props.match.params.id},
+			data:{goodsID:_this.props.match.params.id},
 			dataType: "json",
 			success: function (data) {
-				console.log(data[0].goodsID)
+				console.log(data)
 			   _this.setState({arr:data})
 				var arr1=data
-				console.log(arr1[0])
+				// console.log(arr1[0])
 			}
 		});
 
@@ -101,17 +86,25 @@ class Prodetail extends React.Component{
 							
 					 <div className="p_con" key={i}>
 					 <div className="lunbo">
-									
-						<Carousel autoplay>				
-							<div><h3><img src={Lunbo1}/></h3></div>
-							<div><h3><img src={Lunbo2}/></h3></div>
-							<div><h3><img src={Lunbo3}/></h3></div>
-							<div><h3><img src={Lunbo4}/></h3></div>
-						</Carousel>  
+					 <Carousel autoplay>	
+					{
+
+					item.img.map(function(item1,i){
+						console.log(item1)
+						return(
+										
+								<div><h3><img src={item1.img} /></h3></div>
+
+						
+						)
+					})	
+					}
+					</Carousel> 		
+					
 							 
 					</div>
 					<div className="p_detail">
-						<p className="p_tit">{item.name}</p>
+						<p className="p_tit">{item.title}</p>
 						
 						<div className="flex1">
 							<span className="lib-spot"></span>
@@ -128,7 +121,7 @@ class Prodetail extends React.Component{
 						<div  className="jiage">
 							<span className="price-l">单&nbsp;&nbsp;&nbsp;价:</span>
 							<span className="price-l">首付游</span>
-							<span className="price-l">￥183</span>
+							<span className="price-l">￥{item.money}</span>
 						</div>	
 						<div className="riqi">
 							<span>出发日期</span>
