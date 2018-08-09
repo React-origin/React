@@ -1,9 +1,11 @@
 .index{
+	width:100%;
+	min-height:500px;
 	background:#f0f0f0;
 }
 .index1{
 	width:100%;
-	min-height:500px;
+	min-height:300px;
 }
 .index1 .hzhb{
 	width:1200px;
