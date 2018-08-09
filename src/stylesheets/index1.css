@@ -1,9 +1,9 @@
-body{
+.index{
 	background:#f0f0f0;
 }
 .index1{
-	width:100;
-	min-height:1000px;
+	width:100%;
+	min-height:500px;
 }
 .index1 .hzhb{
 	width:1200px;
@@ -302,7 +302,7 @@ body{
 	height:155px;
 	margin-left:20px;
 }
-.ant-carousel .slick-slide {
+.pmd .ant-carousel .slick-slide {
   text-align: center;
   height: 238px;
   line-height: 238px;
@@ -310,11 +310,11 @@ body{
   overflow: hidden;
 }
 
-.ant-carousel .slick-slide img{
+.pmd .ant-carousel .slick-slide img{
   height:238px;
   width:100%;
 }
-.ant-carousel .slick-dots li button{
+.pmd .ant-carousel .slick-dots li button{
     width: 8px;
     height: 8px;
     border-radius: 8px;
