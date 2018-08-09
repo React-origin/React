@@ -28,29 +28,7 @@ const data1 = Mock.mock({
 		}
 	]
 })
-//Mock.mock('http://www.baidu.com/api.php',{
-//  'imglist|0-7': [
-//	    {
-//	    	'id|+1': 0,
-//	    	'img':"@dataImage('690x388')"
-//	    }
-//  ]
-//})
-//const data2 = Mock.mock({
-//  'list|12':[
-//  
-//  	{
-//  		'classid|+1':0,
-//  		'imglist|1-7': [
-//		    	{
-//		    		'goodsid|+1': 100,
-//		    		'img':"@dataImage('690x388')",
-//		    		'num':"@natural( 68,8888 )"
-//		    	}
-//	    	]
-//  	}
-//  ]
-//})
+
 /*const data3 = Mock.mock({
 	'list|10-20':[
 		{
@@ -73,50 +51,6 @@ const data1 = Mock.mock({
 	]
 })*/
 
-//Mock.mock('http://www.taobao.com/api.php','post',(req)=>{
-//	var classid=eval(req.body);
-////	console.log(classid)
-//	var arr = [];
-//	data2.list.map(function(item){
-//		if(classid==item.classid){
-////			console.log(item.imglist)
-//			arr = item.imglist;
-//		}
-//	})
-//	return arr;
-//})
-
-
-/*const data5 = Mock.mock({
-    'list|7':[
-    
-    	{
-    		'lei|+1':66,
-    		'citylist|1-4': [
-		    	{
-		    		'hhh':"@csentence(1,4)",
-		    		'city|2-7':[
-		    			{
-		    				'classID|+1': 0,
-		    				'dqlist':"@city()"
-		    			}
-		    		]
-		    	}
-	    	]
-    	}
-    ]
-})
-
-Mock.mock('http://www.souhu.com/api.php','post',(req)=>{
-	var lei=eval(req.body);
-	var navarr = [];
-	data5.list.map(function(item){
-		if(lei==item.lei){
-			navarr = item.citylist;
-		}
-	})
-	return navarr;
-})*/
 
 class Index extends React.Component{
 	constructor(props){
@@ -356,9 +290,7 @@ class Index extends React.Component{
 					dataType:'json',
 					success:function(data){
 						var _data1 = data;
-						console.log(_data1)
 					    _this.setState({arr:_data1});
-//					    console.log(_this.state.arr)
 					}
 				});
 			})
@@ -375,9 +307,7 @@ class Index extends React.Component{
 					dataType:'json',
 					success:function(data){
 						var _data5 = data;
-						console.log(_data5);
 					    _this.setState({arr1:_data5});
-					    console.log(_this.state.arr1)
 					}
 				});
 					

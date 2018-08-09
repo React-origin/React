@@ -126,7 +126,7 @@
 #xgwt{
     min-width: 100%;
     height: 319px;
-    border-top: 1px solid rgba(0,0,0,.1);
+    /*border-top: 1px solid rgba(0,0,0,.1);*/
     color: #333;
 }
 .xgwt_bottom{
@@ -136,7 +136,7 @@
     height:259px;
     padding-top: 60px;
     margin: 0 auto;
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    /*border-bottom: 1px solid rgba(0,0,0,.1);*/
     position: relative;
 }
 .xgwt_bottom_left{
@@ -164,7 +164,7 @@
 .xgwt_bottom_right{
     position: absolute;
     width: 350px;
-    left:800px;
+    left:740px;
     box-sizing: border-box;
 }
 .xgwt_bottom_right_top{
@@ -207,15 +207,16 @@
     height: 80px;
     margin-bottom: 10px;
 }
-.one{
+.xgwt_bottom_right_bottom .one{
     background: url(../img/sfy-wechat.png) no-repeat center;
     background-size: cover;
 }
-.two{
+.xgwt_bottom_right_bottom .two{
     background: url(../img/sfy-app.png) no-repeat center;
     background-size: cover;
+    margin-left:0;
 }
-.three{
+.xgwt_bottom_right_bottom .three{
     background: url(../img/jd-app.png) no-repeat center;
     background-size: cover;  
     margin-right: 0;
