@@ -1,4 +1,4 @@
-.index{
+#index{
 	width:100%;
 	min-height:500px;
 	background:#f0f0f0;
@@ -303,6 +303,10 @@
 	width:379px;
 	height:155px;
 	margin-left:20px;
+}
+.pmd .ant-carousel{
+	height: 238px;
+	width:712px;
 }
 .pmd .ant-carousel .slick-slide {
   text-align: center;
