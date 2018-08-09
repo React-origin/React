@@ -33,6 +33,7 @@ body{
 	background:#f0f0f0;
 	margin: 30px auto 0;
 	padding-bottom:60px;
+	box-sizing: initial;
 }
 .index1 .jgdj{
 	width:1200px;
@@ -287,6 +288,9 @@ body{
 	float: left;
 	margin-right:20px;
 }
+.showlist div ul li a{
+	color:#303030;
+}
 .showlist div ul li a:hover{
 	color:#e60012
 }
@@ -297,4 +301,21 @@ body{
 	width:379px;
 	height:155px;
 	margin-left:20px;
+}
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 238px;
+  line-height: 238px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide img{
+  height:238px;
+  width:100%;
+}
+.ant-carousel .slick-dots li button{
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
 }

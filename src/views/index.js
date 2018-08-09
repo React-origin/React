@@ -2,12 +2,18 @@ import React from 'react'
 import $ from 'jquery'
 import Mock from 'mockjs'
 import {Link} from 'react-router-dom'
+import { Carousel } from 'antd'
+import 'antd/dist/antd.css'
 import '../stylesheets/index1.css'
 import Footer from '../components/footer'
 import Header from '../components/header'
 import Xgwt from '../components/xgwt'
 import Data2 from '../data/data2'
 import Data1 from '../data/data1'
+import lbtjpg1 from '../img/index_lbt1.jpg'
+import lbtjpg2 from '../img/index_lbt2.jpg'
+import lbtjpg3 from '../img/index_lbt3.jpg'
+import lbtjpg4 from '../img/index_lbt4.jpg'
 const data = Mock.mock({
 	'list|20':[
 		{
@@ -35,7 +41,7 @@ const data1 = Mock.mock({
 //  
 //  	{
 //  		'classid|+1':0,
-//  		'imglist|0-7': [
+//  		'imglist|1-7': [
 //		    	{
 //		    		'goodsid|+1': 100,
 //		    		'img':"@dataImage('690x388')",
@@ -208,7 +214,14 @@ class Index extends React.Component{
 							</ul>
 						</div>
 						<div>
-							<div className='pmd'></div>
+							<div className='pmd'>
+								<Carousel autoplay>
+								    <div><img src={lbtjpg4}/></div>
+								    <div><img src={lbtjpg3}/></div>
+								    <div><img src={lbtjpg2}/></div>
+								    <div><img src={lbtjpg1}/></div>
+								</Carousel>
+							</div>
 							<div className='con_zj'>
 								<ul>
 									{jsx1}
