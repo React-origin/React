@@ -13,23 +13,21 @@ const ButtonGroup = Button.Group;
 function onPanelChange(value, mode){
 	console.log(value);	
   }
-  var index=0;
+ 
   
 class Prodetail extends React.Component{
 	constructor(props){
 		super(props)
+	
 		this.state={
-			arr:[]
+			arr:[],
+			str:""
 		}
 	}
 	tap(){
-		index++;
-		if(index%2==0){
-			$(".rili").hide()
-		}else{
-			$(".rili").show()
-		}
-	
+		
+		console.log(this.refs.ipt.value)
+		// this.state.str=this.setState({str:this.refs.ipt.value})
 	}
 	plus(){	
 		this.refs.ipt.value++
@@ -62,7 +60,7 @@ class Prodetail extends React.Component{
 			data:{goodsID:_this.props.match.params.id},
 			dataType: "json",
 			success: function (data) {
-				console.log(data)
+				//console.log(data)
 			   _this.setState({arr:data})
 				var arr1=data
 				// console.log(arr1[0])
@@ -85,7 +83,7 @@ class Prodetail extends React.Component{
 						return(
 							
 					 <div className="p_con" key={i}>
-					 <div className="lunbo">
+					   <div className="lunbo">
 					 <Carousel autoplay>	
 					{
 
@@ -93,16 +91,18 @@ class Prodetail extends React.Component{
 						console.log(item1)
 						return(
 										
-								<div><h3><img src={item1.img} /></h3></div>
-
-						
+								<div key={i}><h3><img src={item1.img} /></h3></div>						
 						)
 					})	
 					}
 					</Carousel> 		
-					
+					 <div id="p_rili">
+					  <Calendar onPanelChange={onPanelChange}/>
+					</div>
 							 
 					</div>
+
+
 					<div className="p_detail">
 						<p className="p_tit">{item.title}</p>
 						
@@ -123,13 +123,22 @@ class Prodetail extends React.Component{
 							<span className="price-l">首付游</span>
 							<span className="price-l">￥{item.money}</span>
 						</div>	
+
+ 
+<div className="my-chunk lib-pb24 lib-float-wrap">
+                    <span className="lib-ft14 my-chunk-title my-supplier-title pull-left">供应商家</span>
+                  
+                    <img src="https://img.sfystatic.com/upload/images/supplier/98/d9/1001076.jpg" className="lib-ml29 my-supplier-box pull-left"/>
+                    <span className="lib-ft12 lib-float-wrap my-tel-wrap my-chunk-position lib-ml12 pull-left">
+                        <span className="pull-left">客服电话：4009980920</span>
+                        <span className="pull-left">工作时间：周一~周日 9:30-18:30</span>
+                    </span>
+                </div>
+
 						<div className="riqi">
-							<span>出发日期</span>
-							<strong onClick={_this.tap.bind(_this)}>请选择出发日期</strong>
-<div className="rili" style={{ width:430, border: '1px solid #d9d9d9', borderRadius: 4}}>
-<Calendar fullscreen={false} onPanelChange={onPanelChange} />
-						   </div> 
-								
+							<span>出发日期</span>						
+								<input type="date" placeholder="请左边选择日期" className="my-tab-box" onClick={_this.tap.bind(_this)} ref='ipt'/>
+
 							
 						</div>
 						<div className="p_member">

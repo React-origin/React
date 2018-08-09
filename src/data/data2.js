@@ -7,6 +7,7 @@ const data2 = Mock.mock({
     		'imglist|0-7': [
 		    	{
 					'goodsid|+1': 100,
+					
 					"title":"@ctitle(15,30)",
 					'money':"@natural( 154, 1000 )",
 		    		'img':"@dataImage('690x388')",

@@ -53,12 +53,12 @@ class Prolist extends React.Component{
 									<dt><img src={item.img}/></dt>
 									<dd>  
 									
-										<div className="tit">{item.title}</div>
-										<div className="infor">{item.recommended_reason}</div>
-										<div className="data">出发时间<span>{item.num}</span></div>
+										<div className="tit">{item.title}}</div>
+										<div className="infor">{item.num}</div>
+										<div className="data">出发时间：<span>{item.num}</span></div>
 										<div className="tag">
-											<span>合作平牌</span>
-											<span>首付游:</span>
+											<span>合作平台：</span>
+											<span>首付游</span>
 											<span className="sfy">首付游<span className="price">{item.money}</span></span>                                   
 										</div>
 									</dd>

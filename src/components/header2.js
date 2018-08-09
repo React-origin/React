@@ -28,9 +28,7 @@ class Header2 extends React.Component{
 				</div>
 			</div>
 		<div>
-			<div className="p_top">
-			11
-			</div>
+			
 		</div>
 			</div>
 			
