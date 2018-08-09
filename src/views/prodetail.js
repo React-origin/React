@@ -88,7 +88,8 @@ class Prodetail extends React.Component{
 	render(){
 		var _this = this
 		return(
-			<div id='prodetail'>			
+			<div id='prodetail'>
+				<Header2/>			
 				<div className="p_main">
 				{/* 遍历开始 */}
 
@@ -227,7 +228,7 @@ class Prodetail extends React.Component{
 					
 					</div>
 				</div>
-
+				<Footer/>
 	
 
 			</div>

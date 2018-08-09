@@ -38,7 +38,7 @@ class Prolist extends React.Component{
 	render(){
 	return(
 		<div>
-				<header></header>
+				<Header/>
 				<div id="main">
                     <div className="con">
 					{/* 遍历dl的开始 */}
@@ -76,6 +76,7 @@ class Prolist extends React.Component{
                     </div>
                     {/* <div className="page">2</div> */}
                 </div>
+				<Xgwt/>
 	    </div>
 		)
 	}
