@@ -21,7 +21,9 @@ class Header2 extends React.Component{
 							<img src={Header2_dianji} className="w_header2_dianji"/>
 						</Link>
 						<span>不用攒钱的出境游</span>
-						<img src={Header2_logo} className="w_header2_logo"/>
+						<Link to="/index">
+							<img src={Header2_logo} className="w_header2_logo"/>
+						</Link>
 					</div>		
 				</div>
 			</div>
