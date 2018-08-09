@@ -24,15 +24,15 @@
     min-height: 200px;
     overflow: hidden;
 }
-.ant-carousel .slick-slide {
+.lunbo .ant-carousel .slick-slide {
     text-align: center;
     height: 290px!important;
     line-height: 290px;
-     background: #364d79;
+     /* background: #364d79; */
     overflow: hidden;
   }
 
-  .ant-carousel .slick-slide h3 {
+  .lunbo .ant-carousel .slick-slide h3 {
     color: #fff;
   }
  .lunbo h3 img{

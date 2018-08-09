@@ -1,6 +1,6 @@
 import Mock from 'mockjs'
 const data2 = Mock.mock({
-    'list|12-30':[
+    'list|12-50':[
     
     	{
     		'classid|+1':0,

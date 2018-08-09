@@ -149,7 +149,7 @@ class Index extends React.Component{
 						</div>
 						<div>
 							<div className='pmd'>
-								<Carousel autoplay>
+								<Carousel>
 								    <div><img src={lbtjpg4}/></div>
 								    <div><img src={lbtjpg3}/></div>
 								    <div><img src={lbtjpg2}/></div>

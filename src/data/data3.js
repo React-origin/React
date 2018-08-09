@@ -1,6 +1,6 @@
 import Mock from "mockjs"
 const data3 = Mock.mock({
-    'list|20':[
+    'list|50':[
     
     	{
     		'goodsid|+1':100,
