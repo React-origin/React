@@ -55,6 +55,7 @@ input,a{outline:none;}
 	position: absolute;
 	top: 1px;
 	right: -37px;
+	cursor: pointer;
 }
 
 #proyd h3{
@@ -87,7 +88,9 @@ input,a{outline:none;}
 	font-size: 20px;
 	font-weight: 600;
 	border: 0;
+	border-bottom: 1px solid #cecece;
 	outline: 0;
+	cursor: pointer;
 }
 .w_people input{
 	height: 32px;
@@ -96,7 +99,10 @@ input,a{outline:none;}
 	box-sizing: border-box;
 	padding-left: 11px;
 	outline: 0;
-	border-bottom: 0;
+	border: 0;
+    border-left: 1px solid #cecece;
+    border-right: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
 	border-top: 0;
 }
 .xl_con{
@@ -216,5 +222,7 @@ input,a{outline:none;}
 }
 .w_rili{
 	z-index: 999;
+	left: 240px;
+    top: 10px;
 }
 

@@ -8,8 +8,10 @@ import { Calendar } from 'antd';
 import 'antd/dist/antd.css'
 
 function onPanelChange(value, mode) {
-  console.log(value._d);
-  $(".w_shijian").html(value._d)
+	var time = JSON.stringify(value)
+  //console.log(typeof time);
+  time = time.slice(1,11)
+  $(".w_shijian").html(time)
 }
 var index = 0;
 class Proyd extends React.Component{
@@ -57,24 +59,52 @@ class Proyd extends React.Component{
 		this.setState({
 			people:this.refs.ipt.value,
 			allnum:245*parseInt(this.refs.ipt.value)
-		})   
-		
-							
+		})   	
 	}
 	
 	//点击提交
 	tijiao(){
 		this.props.history.push("/orders")
 	}
-	componentDidMount(){
+	componentDidMount(){			
+				this.refs.ipt.value = 3;    //假设从前面传送过来的值是2（模拟）
+					this.setState({
+					people:this.refs.ipt.value,
+					allnum:245*parseInt(this.refs.ipt.value)
+				})   
 				$(".lianxi").change(function(){
 					var index =  $(this).parent().index();
 					var val = $(this).val()
 						$(".cx_con1").find("div").eq(index).find("input").attr("value",val)											
-				})				
+				})										
 	}
 	
-	render(){
+	render(){	
+					var cishu = this.state.people;   //假设从前面传送过来的值是2（模拟）,定义循环生成的次数
+						var jsx = [];
+						for(let i=0;i<cishu-1;i++){
+							let index = i;
+								jsx.push(<div className="cx_con cx_add">
+													<p>出行人{index+2}<span></span></p>
+													<div>
+														<span>中文名称</span>
+														<input type="text" className="chu_name"/>									
+													</div>
+													<div>
+														<span>手机号码</span>
+														<input type="text" className="chu_tel"/>									
+													</div>
+													<div>
+														<span>身份证号</span>
+														<input type="text" className="chu_number"/>									
+													</div>
+													<div>
+														<span>电子邮箱</span>
+														<input type="text" className="chu_email"/>									
+													</div>						
+										</div>)
+						}
+		
 		return(
 			<div id='proyd'>
 				<Header2/>
@@ -108,7 +138,7 @@ class Proyd extends React.Component{
 										<span className='w_shijian'>2018-8-8</span>
 									<img src={w_date} className="proyd_date" onClick={this.tap2.bind(this)} />								
 									</span>
-									<div style={{ width: 300, border: '1px solid #d9d9d9', borderRadius: 4,background:"#fff",position:"absolute",left:"200px",display:"none"}} className="w_rili">
+									<div style={{ width: 300, border: '1px solid #d9d9d9', borderRadius: 4,background:"#fff",position:"absolute",left:"240px",top:"10px",display:"none"}} className="w_rili">
 									    <Calendar fullscreen={false} 
 									    onPanelChange={onPanelChange} 
 									    
@@ -150,10 +180,10 @@ class Proyd extends React.Component{
 							
 					
 						<div className="w_chuxing">
-							<h3>出行人信息<span>（出行人必须是联系人)</span></h3>
+							<h3>出行人信息<span>（出行人1必须是联系人)</span></h3>
 													
 							<div className="cx_con cx_con1">
-									<p>出行人<span></span></p>
+									<p>出行人1<span></span></p>
 									<div>
 										<span>中文名称</span>
 										<input type="text" className="chu_name" disabled="disabled"/>									
@@ -171,6 +201,11 @@ class Proyd extends React.Component{
 										<input type="text" className="chu_email" disabled="disabled"/>									
 									</div>						
 							</div>
+							
+							<div className="cx_wrap_main">
+										{jsx}
+							</div>
+									
 							
 					
 											
