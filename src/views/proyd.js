@@ -59,6 +59,7 @@ class Proyd extends React.Component{
 			allnum:245*parseInt(this.refs.ipt.value)
 		})   
 		
+							
 	}
 	
 	//点击提交
@@ -66,7 +67,11 @@ class Proyd extends React.Component{
 		this.props.history.push("/orders")
 	}
 	componentDidMount(){
-		
+				$(".lianxi").change(function(){
+					var index =  $(this).parent().index();
+					var val = $(this).val()
+						$(".cx_con1").find("div").eq(index).find("input").attr("value",val)											
+				})				
 	}
 	
 	render(){
@@ -124,19 +129,19 @@ class Proyd extends React.Component{
 							<div className="lianxi_con">
 								<div>
 									<span>中文名称</span>
-									<input type="text" className="lianxi_name"/>									
+									<input type="text" className="lianxi lianxi_name"/>									
 								</div>
 								<div>
 									<span>手机号码</span>
-									<input type="text" className="lianxi_tel"/>									
+									<input type="text" className="lianxi lianxi_tel"/>									
 								</div>
 								<div>
 									<span>身份证号</span>
-									<input type="text" className="lianxi_number"/>									
+									<input type="text" className="lianxi lianxi_number"/>									
 								</div>
 								<div>
 									<span>电子邮箱</span>
-									<input type="text" className="lianxi_email"/>									
+									<input type="text" className="lianxi lianxi_email"/>									
 								</div>
 							
 							</div>
@@ -145,25 +150,25 @@ class Proyd extends React.Component{
 							
 					
 						<div className="w_chuxing">
-							<h3>出行人信息<span>（出行人1必须是联系人)</span></h3>
+							<h3>出行人信息<span>（出行人必须是联系人)</span></h3>
 													
-							<div className="cx_con">
-									<p>出行人<span>1</span></p>
+							<div className="cx_con cx_con1">
+									<p>出行人<span></span></p>
 									<div>
 										<span>中文名称</span>
-										<input type="text" className="chu_name"/>									
+										<input type="text" className="chu_name" disabled="disabled"/>									
 									</div>
 									<div>
 										<span>手机号码</span>
-										<input type="text" className="chu_tel"/>									
+										<input type="text" className="chu_tel" disabled="disabled"/>									
 									</div>
 									<div>
 										<span>身份证号</span>
-										<input type="text" className="chu_number"/>									
+										<input type="text" className="chu_number" disabled="disabled"/>									
 									</div>
 									<div>
 										<span>电子邮箱</span>
-										<input type="text" className="chu_email"/>									
+										<input type="text" className="chu_email" disabled="disabled"/>									
 									</div>						
 							</div>
 							

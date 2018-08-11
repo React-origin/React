@@ -4,11 +4,28 @@ import Footer from '../components/footer'
 import Header2 from '../components/header2'
 import orders_logo from '../img/orders_logo.png'
 import orders_img from '../img/orders_img.jpg'
+import $ from 'jquery'
 
 class Orders extends React.Component{
 	constructor(props){
 		super(props);
 	}
+	
+	componentDidMount(){
+		$.ajax({
+			type:"post",
+			url:"http://localhost:9000/orders",
+			async:true,
+			data:{
+				username:"1234567"
+			},
+			success:function(data){
+				console.log(data)
+			}
+		});
+		
+	}
+	
 	render(){
 		return(
 			<div id='orders'>
